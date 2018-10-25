@@ -1,0 +1,31 @@
+﻿@model MvcMusicStore.Models.Album
+
+@{
+    ViewBag.Title = "Album - " + Model.Title;
+}
+
+<div class="card mx-5 my-5 card-detail"> 
+    <img class="card-img-top" src="@Model.AlbumArtUrl" alt="Card image cap">
+    <div class="card-header">
+        <h2>Album: @Model.Title</h2>
+    </div>
+    <div id="album-details" class="card-body">
+        <p>
+            <em>Genre:</em>
+            @Model.Genre.Name
+        </p>
+        <p>
+            <em>Artist:</em>
+            @Model.Artist.Name
+        </p>
+        <p>
+            <em>Price:</em>
+            @String.Format("{0:F}",
+Model.Price)
+        </p>
+    </div>
+    <div class="card-footer">
+        @Html.ActionLink("Add to cart", "AddToCart", "ShoppingCart", new { id = Model.AlbumId }, htmlAttributes: new { @class = "btn btn-primary float-right" })
+        @Html.ActionLink("Go to the Store Index", "Index", null, null, htmlAttributes: new { @class = "text-muted text-small" })
+    </div>
+</div>

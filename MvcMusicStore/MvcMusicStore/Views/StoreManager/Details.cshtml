@@ -1,0 +1,62 @@
+﻿@model MvcMusicStore.Models.Album
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+<div class="card mx-5 my-5">
+    <div class="card-header">
+        <h2>Album Details</h2>
+    </div>
+    <div class="card-body">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Artist.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Artist.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Genre.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Genre.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.AlbumArtUrl)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AlbumArtUrl)
+            </dd>
+
+        </dl>
+
+    </div>
+    <div class="card-footer">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.AlbumId }, new { @class = "btn btn-default btn-info float-right" })
+        @Html.ActionLink("Back to List", "Index", null, null, new { @class = "text-muted" })
+    </div>
+</div>

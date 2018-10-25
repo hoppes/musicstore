@@ -1,0 +1,25 @@
+﻿@model MvcMusicStore.Models.Album
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+@using (Html.BeginForm()) {
+@Html.AntiForgeryToken()
+
+    <div class="card mx-5 my-5">
+        <div class="card-header">
+            <h2 class="text-danger">Delete</h2>
+        </div>
+        <div class="card-body">
+            <p>Are you sure you want to delete <strong>@Model.Title</strong>?</p>
+        </div>
+        <div class="card-footer">
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default float-right btn-danger" />
+                @Html.ActionLink("Back to List", "Index", null, null, new { @class="text-muted"})
+            </div>
+        </div>
+    </div>
+}

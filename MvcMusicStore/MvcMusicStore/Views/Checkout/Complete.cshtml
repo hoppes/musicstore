@@ -1,0 +1,25 @@
+﻿@model int
+@{
+    ViewBag.Title = "Checkout Complete";
+    ViewBag.BodyClass = "bg-success";
+}
+
+
+<div class="card mx-5 my-5 card-checkout">
+    <div class="card-header">
+        <h2>Checkout Complete</h2>
+    </div>
+    <div id="complete" class="card-body pb-5">
+        <p>Thanks for your order! Your order number is: @Model</p>
+    </div>
+    <div class="card-footer">
+        <p>
+            How about shopping for some more music in our
+            @Html.ActionLink("store",
+"Index", "Home")
+        </p>
+    </div>
+</div>
+
+        
+        

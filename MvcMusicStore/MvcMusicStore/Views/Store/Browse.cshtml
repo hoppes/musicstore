@@ -1,0 +1,21 @@
+﻿@model MvcMusicStore.Models.Genre
+
+@{
+    ViewBag.Title = "Browse";
+}
+
+<div class="card mx-5 my-5">
+    <div class="card-header">
+        <h2>Browsing Genre: @Model.Name</h2>
+    </div>
+    <div class="card-body">
+        <ul>
+            @foreach (var album in Model.Albums)
+            {
+                <li>
+                    @Html.ActionLink(album.Title, "Details", new { id = album.AlbumId })
+                </li>
+            }
+        </ul>
+    </div>
+</div>

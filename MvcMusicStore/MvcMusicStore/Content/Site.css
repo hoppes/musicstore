@@ -1,0 +1,16 @@
+﻿
+html { font-size:.85em !important; }
+
+.field-validation-error { top:5px; display:block;
+	position: relative;
+	padding: .5rem 1rem;
+	margin-bottom: 1rem;
+	border: 1px solid transparent;
+	border-radius: .25rem;
+	color: #721c24;
+	background-color: #f8d7da;
+	border-color: #f5c6cb;
+    font-size:.85em;
+}
+
+.card-detail { max-width:20%; }
