@@ -1,15 +1,32 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Music Store";
 }
 
 
 <div class="card mx-5 my-5">
     <div class="card-header">
-        <h2>This is the homepage</h2>
+        <h2>Best Selling</h2>
     </div>
     <div class="card-body">
-        <p>Content</p>
+
+        <div id="promotion"></div>
+        <ul class="card-columns">
+            @foreach (var album in Model)
+            {
+
+                <li class="card">
+                    <img class="card-img-top" alt="@album.Title" src="@album.AlbumArtUrl" />
+                    <div class="card-body">
+                        <span>@album.Title</span>
+                    </div>
+                    <div class="card-footer">
+                        <a href="@Url.Action("Details", new { id = album.AlbumId })">Learn More</a>
+                    </div>
+                </li>
+            }
+        </ul>
+
     </div>
 </div>
 

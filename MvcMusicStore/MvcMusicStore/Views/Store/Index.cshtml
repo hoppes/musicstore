@@ -15,10 +15,11 @@
         <p class="card-subtitle">Select from @Model.Count() Genres</p>
     </div>
     <div class="card-body">
-        <ul>
+        <ul class="card-columns">
             @foreach (var genre in Model)
             {
-                <li> @Html.ActionLink(genre.Name, "Browse", new { genre = genre.Name }) </li>
+                <li class="card p-3"> @Html.ActionLink(genre.Name, "Browse", new { genre = genre.Name }) </li>
+
             }
         </ul>
     </div>

@@ -9,12 +9,21 @@
         <h2>Browsing Genre: @Model.Name</h2>
     </div>
     <div class="card-body">
-        <ul>
+        <ul class="card-columns">
             @foreach (var album in Model.Albums)
             {
-                <li>
-                    @Html.ActionLink(album.Title, "Details", new { id = album.AlbumId })
+                
+
+                <li class="card">
+                    <img class="card-img-top" alt="@album.Title" src="@album.AlbumArtUrl" />
+                    <div class="card-body">
+                        <span>@album.Title</span>
+                    </div>
+                    <div class="card-footer">
+                        <a href="@Url.Action("Details", new { id = album.AlbumId })">Learn More</a>
+                    </div>
                 </li>
+
             }
         </ul>
     </div>

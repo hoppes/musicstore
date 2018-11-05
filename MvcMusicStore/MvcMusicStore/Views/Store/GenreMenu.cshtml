@@ -1,0 +1,10 @@
+﻿@model IEnumerable<MvcMusicStore.Models.Genre>
+
+<ul id="categories" class="nav flex-column">
+    @foreach (var genre in Model)
+    {
+        <li class="nav-item">
+            @Html.ActionLink(genre.Name, "Browse", "Store", new { Genre = genre.Name }, new { @class = "nav-link" })
+        </li>
+    }
+</ul>
